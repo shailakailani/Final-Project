@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class HomeController {
+public class HomePageController {
      /**
      * Method connects specified url to an html page to view (index.html)
      * @return homepage file name

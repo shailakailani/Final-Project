@@ -1,0 +1,20 @@
+@import "theme.css";
+
+.third-col{
+    display: flex;
+    columns: 4;
+    flex: 25%;
+    flex-direction: row;
+    width: 100%;
+    gap: 6%;
+}
+
+.officialCard{
+    width: 25%;
+    flex-direction: row;
+    background-color: rgb(242, 220, 159);
+    padding: 1%;
+    border: 2px solid peru;
+    border-radius: 4%;
+    margin: 1%;
+}

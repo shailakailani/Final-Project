@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class CommentsController {
+public class CommentsPageController {
      /**
      * Method connects specified url to an html page to view (comments.html)
      * @param model information/element to be added to the page
