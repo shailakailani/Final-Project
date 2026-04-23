@@ -3,15 +3,16 @@ package api.model;
 /**
  * Official.java
  * Parent class for all officials.
- * April 16, 2026
+ * @author Kelvin Myat
+ * @since April 16, 2026
  */
 public class Official {
     private String name;
     private String party;
     private String email;
     private String office;
-    private double salary;
-    private int districtId;
+    private Long salary;
+    private Long districtId;
     private String officialType;
 
     /**
@@ -25,7 +26,7 @@ public class Official {
      * @param officialType the type of official
      */
     public Official(String name, String party, String email, String office,
-                    double salary, int districtId, String officialType) {
+                    Long salary, Long districtId, String officialType) {
         this.name = name;
         this.party = party;
         this.email = email;
@@ -71,7 +72,7 @@ public class Official {
      * Gets the official's salary.
      * @return the salary
      */
-    public double getSalary() {
+    public Long getSalary() {
         return salary;
     }
 
@@ -79,7 +80,7 @@ public class Official {
      * Gets the district id.
      * @return the district id
      */
-    public int getDistrictId() {
+    public Long getDistrictId() {
         return districtId;
     }
 
@@ -127,7 +128,7 @@ public class Official {
      * Sets the official's salary.
      * @param salary the new salary
      */
-    public void setSalary(double salary) {
+    public void setSalary(Long salary) {
         this.salary = salary;
     }
 
@@ -135,7 +136,7 @@ public class Official {
      * Sets the district id.
      * @param districtId the new district id
      */
-    public void setDistrictId(int districtId) {
+    public void setDistrictId(Long districtId) {
         this.districtId = districtId;
     }
 

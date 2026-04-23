@@ -2,7 +2,8 @@ package api.model;
 
 /**
  * CongressMember class that extends Official.
- * April 19, 2026
+ * @author Kelvin Myat
+ * @since April 19, 2026
  */
 public class CongressMember extends Official {
 
@@ -16,7 +17,7 @@ public class CongressMember extends Official {
      * @param districtId the district id
      */
     public CongressMember(String name, String party, String email, String office,
-                          double salary, int districtId) {
+                          Long salary, Long districtId) {
         super(name, party, email, office, salary, districtId, "Congress Member");
     }
 }
