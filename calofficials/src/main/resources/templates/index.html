@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head >
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="theme.css">
+        <link rel="stylesheet" th:href="@{/theme.css}">
         <title color="red">CalOfficials</title>
     </head>
     <body>
@@ -23,14 +23,14 @@
                 <h2 class="card-text">
                     Click on the Search button below or in the menu, and enter the name of an official or a number corresponding to the district you're looking for.
                 </h2>
-                <button>Search</button>
+                <button style="--button-color: mistyrose; --button-text-color: lightpink; --button-border-color: darksalmon; --button-text-border-color: palevioletred;"> Search </button>
             </div>
             <div class="card">
                 <h1 class="card-title">
                     Selecting County
                 </h1>
                 <h2 class="card-text">Click on the County button below or in the menu, and enter the name of the county you live in on the search bar. </h2>
-                <button>County</button>
+                <button style="--button-color: mistyrose; --button-text-color: lightpink; --button-border-color: darksalmon; --button-text-border-color: palevioletred;">County</button>
             </div>
         </div>
     </body>

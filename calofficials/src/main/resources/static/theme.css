@@ -41,6 +41,19 @@ h3{
     
 }
 
+button{
+    --button-text-border-color: rgb(155, 155, 255); 
+    font-family: "Coiny";
+    border: 2px solid;
+    padding: 1%;
+    border-radius: 15%;
+    background-color: var(--button-color, rgb(203, 203, 255));
+    -webkit-text-stroke: .8px var(--button-text-border-color);
+    -webkit-text-fill-color: var(--button-text-color, #9EB5FF);
+    font-size: 1.1em;
+    border-color: var(--button-border-color, --button-text-border-color);
+}
+
 .card-title{ 
     color:#9EB5FF;
     -webkit-text-stroke: .1px #171B8C;
@@ -50,6 +63,9 @@ h3{
 .card-text {
     color:steelblue;
     font-family: "Syne Mono";
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-width: .01px;
+    -webkit-text-stroke-color: #171b8c;
 }
 
 html {
