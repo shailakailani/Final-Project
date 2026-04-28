@@ -7,11 +7,25 @@
     </head>
     <body>
         <h1 th:text="${message}"></h1>
-        <div th:each="official : ${#numbers.sequence(0, 5)}" class="third-col">
-            <div class="officialCard">
-                <h1>Senator</h2>
-                <h2>Name</h3>
+        <div class="card-container">
+            <div th:each="official : ${#numbers.sequence(0, 5)}" class="officialCard">
+                <h1>Senator</h1>
+                <h2>Name</h2>
                 <h3>Salary: 100000</h3>
+                <h3>Senate District: 11</h3>
+                <h3>Counties Served: County 1, County 2, County 3...</h3>
+            </div>
+            <div th:each="official : ${#numbers.sequence(0, 3)}" class="officialCard">
+                <h1>Congressman</h1>
+                <h2>Name</h2>
+                <h3>Salary: 120000</h3>
+                <h3>Senate District: 11</h3>
+                <h3>Counties Served: County 1, County 2, County 3...</h3>
+            </div>
+            <div th:each="official : ${#numbers.sequence(0, 1)}" class="officialCard">
+                <h1>Representative</h1>
+                <h2>Name</h2>
+                <h3>Salary: 120000</h3>
                 <h3>Senate District: 11</h3>
                 <h3>Counties Served: County 1, County 2, County 3...</h3>
             </div>
