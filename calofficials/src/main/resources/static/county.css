@@ -1,4 +1,5 @@
 @import "theme.css";
+
 .card-container{    
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -10,4 +11,18 @@
     padding: 1%;
     border: 2px solid peru;
     border-radius: 4%;
+}
+
+.input{
+    --input-border: cadetblue;
+    --input-background: honeydew;
+    --input-text-color:darkslategray;
+    width: 200px;
+    height: 25px;
+    border-radius: 10%;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background);
+    font-family: 'Syne Mono';
+    color: var(--input-text-color);
+    margin-bottom: 2%;
 }

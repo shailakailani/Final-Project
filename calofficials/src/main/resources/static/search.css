@@ -1,1 +1,36 @@
 @import "theme.css";
+
+.card-container{    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1%;
+}
+
+.officialCard{
+    background-color: #e8d1d7;
+    padding: 1%;
+    border: 2px solid #d7afb9;
+    border-radius: 4%;
+}
+
+.officialCard h3{
+    color: #a97481;
+}
+
+.input{
+    --input-border: cadetblue;
+    --input-background: honeydew;
+    --input-text-color: green;
+    width: 200px;
+    height: 25px;
+    border-radius: 10%;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background);
+    font-family: 'Syne Mono';
+    color: var(--input-text-color);
+    margin-bottom: 2%;
+}
+
+.input:focus-visible{
+    outline: auto;
+}
