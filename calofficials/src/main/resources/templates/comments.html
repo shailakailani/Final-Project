@@ -7,6 +7,17 @@
         <meta>
     </head>
     <body>
-    <h1 th:text="${message}"></h1>
+        <h1 th:text="${message}"></h1>
+        <div class="card-container">
+            <div th:each="official : ${#numbers.sequence(0, 5)}" class="commentCard">
+                <h2>@ANONYMOUS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium exercitationem neque dicta ad autem dolor omnis eaque totam! Provident sint quisquam minus velit vero ratione quibusdam doloribus tempora deserunt!</p>
+            </div>
+            <div class="commentCard">
+                <h2>@sharonkelly</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur ratione beatae quae officiis cupiditate tenetur laudantium dolor magni amet aspernatur similique hic, ipsam fuga tempore corrupti id earum nesciunt nisi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia enim nihil consectetur facilis magni voluptatem maiores ducimus. Laborum earum placeat eveniet repudiandae molestias aut modi! Cum laudantium sequi expedita.</p>
+            </div>
+        </div>
+          
     </body>
 </html>

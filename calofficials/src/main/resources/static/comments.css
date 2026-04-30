@@ -1,1 +1,29 @@
 @import url("theme.css");
+.card-container{    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, 300px);
+    gap: 1%;
+}
+
+.commentCard{
+    background-color: rgb(219, 201, 245);
+    padding: 2%;
+    border: 2px solid rgb(194, 159, 242);
+    border-radius: 4%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.commentCard p{
+    text-align: right;
+    font-family: "Offside";
+    hyphens: auto;
+}
+
+.commentCard h2{
+    margin-top: 2%;
+    font-family: "Yomogi";
+    color: mediumslateblue;
+    text-transform: lowercase;
+}
