@@ -2,15 +2,22 @@
 ## Authors
 Shaila Lewis and Kelvin Myat
 
-# Description
+## Description
 This application is meant to allow users in California to easily find out who their elected officials and representatives are.
 
 # Project Structure
 The workspace contains:
 - `src`: folder to mantain sources
-- - `main`:
-- `doc`: folder to mantain documentation related to the project (UML diagram, etc)
+    - `main`:
+        - `java`: folder to mantain classes and entrypoints organized.
+        -  `resources`: folder to mantain visuals and web templates organized.
+- `doc`: folder mantaining documentation        
 
-This program 
+## Classes (UML Diagram)
+<img src="calofficials/doc/CalOfficials.png">
+
+## Website
+
+
 # Instructions
 
