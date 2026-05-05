@@ -23,5 +23,7 @@ The workspace contains:
 <img src="doc/commentspage.png">
 
 # Instructions
+Run CalOfficialsApplication.java in the shai/kelv/calofficials folder, then enter localhost:8080 in your browser to access the website. Follow the instructions in the website after that.
 
+(BEWARE: Website is still under construction so all data is static)
 
