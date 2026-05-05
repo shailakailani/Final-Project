@@ -4,5 +4,5 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class CongressionalDistrict extends District {
-    private String mapType = "Congressional Map";
+    private MapType mapType =  MapType.CONGRESS;
 }

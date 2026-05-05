@@ -4,5 +4,5 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class AssemblyDistrict extends District{
-    private String mapType = "Assembly Map";
+    private MapType mapType = MapType.ASSEMBLY;
 }

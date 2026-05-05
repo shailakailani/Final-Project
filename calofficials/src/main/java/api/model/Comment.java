@@ -5,14 +5,13 @@
  */
 
 package api.model;
-import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Comment {
     private String username;
     private Long id;
-    private Instant date;
+    private LocalDateTime date;
     private String message;
     private ArrayList<Comment> replies;
 
@@ -26,7 +25,7 @@ public class Comment {
         this.username = username.replaceAll(" ", "").toLowerCase();
         this.message = message;
         this.id = id;
-        this.date = Instant.now();
+        this.date = LocalDateTime.now();
     }
 
     /**
@@ -66,10 +65,10 @@ public class Comment {
 
     /**
      * This method returns date this comment was posted
-     * @return Date
+     * @return Date in string format
      */
-    public Date getTime(){
-        return Date.from(this.date);
+    public String getTime(){
+        return date.toString();
     }
 
     /**

@@ -1,18 +1,35 @@
+/**
+ * @author Shaila Lewis
+ * @since 04.30.26
+ */
 package shai.kelv.calofficials.comments.entity;
-
-import java.time.Instant;
+import java.time.LocalDateTime;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="COMMENT")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="PARENT_ID", nullable=true, unique=false)
     private Long parentId;
+    @Column(name="USERNAME", nullable=true, unique=false)
     private String username;
+    @Column(name="MESSAGE", nullable=false)
     private String message;
-    private Instant date;
+    @Column(name="DATE")
+    private LocalDateTime date;
+
+    public Comment(Long parentId, String username, String message){
+        this.parentId = parentId;
+        this.username = username;
+        this.message = message;
+        this.date = LocalDateTime.now();
+    }
 }
