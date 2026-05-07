@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="OFFICIALS")
+@Table(name="officials")
 public class Senator extends Official {
     private OfficialType officialType = OfficialType.SENATOR;
 }

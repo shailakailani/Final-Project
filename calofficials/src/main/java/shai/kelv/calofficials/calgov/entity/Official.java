@@ -15,20 +15,27 @@ import java.util.List;
 public class Official {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
 
-    @Column(name= "NAME", unique= false, nullable= false)
+    @Column(name= "name", unique= false, nullable= false)
     private String name;
 
+    @Column(name= "salary", unique= false, nullable= true)
+    private Long salary;
+
     @Enumerated(EnumType.STRING)
+    @Column(name="party", nullable = true)
     private Party party;
 
-    @Column(name = "DISTRICT_ID", nullable = false)
+    @Column(name = "district_id", nullable = false)
     private Long districtId;
 
     @ElementCollection
+    @Column(name="committees")
     private List<Long> committeeIds;
 
     @Enumerated(EnumType.STRING)
+    @Column(name="official_type", nullable = false)
     private OfficialType officialType;
 }

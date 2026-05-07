@@ -13,18 +13,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="DISTRICTS")
+@Table(name="districts")
 public class District {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="DISTRICT_ID", nullable = false)
+    @Column(name="district_id", nullable = false)
     private Long districtId;  
 
     @ElementCollection
+    @Column(name="counties")
     private List<String> counties;
     
     @Enumerated(EnumType.STRING)
+    @Column(name="map_type")
     private MapType mapType;
 }

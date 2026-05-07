@@ -11,6 +11,7 @@ The workspace contains:
     - `main`:
         - `java`: folder to mantain classes and entrypoints organized.
         -  `resources`: folder to mantain visuals and web templates organized.
+- `data`: folder to mantain csvs containing initial data for our government information.
 - `doc`: folder mantaining documentation (UML Diagram, Website preview, etc.)       
 
 ## Classes (UML Diagram)
