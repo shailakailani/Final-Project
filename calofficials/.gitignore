@@ -38,3 +38,4 @@ build/
 *.html
 *.css
 *.csv
+*.db
