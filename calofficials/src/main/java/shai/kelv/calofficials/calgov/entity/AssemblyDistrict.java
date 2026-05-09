@@ -1,8 +1,7 @@
 package shai.kelv.calofficials.calgov.entity;
+import jakarta.persistence.DiscriminatorValue;
 
-import jakarta.persistence.Entity;
-
-@Entity
+@DiscriminatorValue("ASSEMBLY")
 public class AssemblyDistrict extends District{
     private MapType mapType = MapType.ASSEMBLY;
 }

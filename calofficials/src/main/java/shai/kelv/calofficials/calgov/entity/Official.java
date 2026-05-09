@@ -1,17 +1,12 @@
 package shai.kelv.calofficials.calgov.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-
+import jakarta.persistence.*;
 import java.util.List;
 
-@MappedSuperclass
+@Entity
+@Table(name="officials")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) 
+@DiscriminatorColumn(name = "official_type")
 public class Official {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +31,43 @@ public class Official {
     private List<Long> committeeIds;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="official_type", nullable = false)
+    @Column(name="official_type", nullable = false, insertable = false, updatable = false)
     private OfficialType officialType;
+
+    public String getName(){
+        return this.name;
+    }
+
+    public Long getDistrictId(){
+        return this.districtId;
+    }
+
+    public Long getId(){
+        return this.id;
+    }
+
+    public OfficialType getOfficialType(){
+        return this.officialType;
+    }
+    public Party getParty(){
+        return this.party;
+    }
+
+    public Long getSalary(){
+        return this.salary;
+    }
+
+    public List<Long> getCommitteeIds(){
+        return this.committeeIds;
+    }
+
+    public String toString(){
+        StringBuilder official = new StringBuilder("Salary: ");
+        official.append(this.salary + "\n District ID: " + this.districtId);
+        official.append("\n Name: " + this.name);
+        official.append("\n Party: " + this.party);
+        official.append("\n Committees: " + this.committeeIds);
+
+        return official.toString();
+    }
 }

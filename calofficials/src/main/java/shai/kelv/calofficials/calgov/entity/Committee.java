@@ -25,4 +25,19 @@ public class Committee {
     @Column(name="official_type", nullable = false)
     private OfficialType officialType;
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public Long getId(){
+        return this.id;
+    }
+
+    public OfficialType getOfficialType(){
+        return this.officialType;
+    }
 }

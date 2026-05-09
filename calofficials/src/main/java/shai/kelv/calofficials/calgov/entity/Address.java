@@ -1,12 +1,10 @@
+/**
+ * Description:
+ * @author Shaila Lewis, Kelvin Myat
+ * @since 05.09.2026
+ */
 package shai.kelv.calofficials.calgov.entity;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="addresses")

@@ -9,34 +9,18 @@
     <body>
     <h1 th:text="${message}"></h1>
     <search>
-        <form>
-            <input class="input" name="searchbar" placeholder="Enter official name or district number">
+        <form action="/search" method="get">
+            <input class="input" th:value="${searchterm}" type="text" name="searchbar" placeholder="Enter official name or district number">
         </form>
     </search>
-    <div class="card-container">
-        <div th:each="official : ${#numbers.sequence(0, 5)}" class="officialCard">
-                <h1>Senator</h1>
-                <h2>Name</h2>
-                <h3>Salary: 100000</h3>
-                <h3>Senate District: 11</h3>
-                <h3>Counties Served: County 1, County 2, County 3...</h3>
-                <h3>Committees: committee 1, committee 2, committee 3</h3>
-            </div>
-            <div th:each="official : ${#numbers.sequence(0, 3)}" class="officialCard">
-                <h1>Congressman</h1>
-                <h2>Name</h2>
-                <h3>Salary: 120000</h3>
-                <h3>Congressional District: 11</h3>
-                <h3>Counties Served: County 1, County 2, County 3...</h3>
-                <h3>Committees: committee 1, committee 2, committee 3</h3>
-            </div>
-            <div th:each="official : ${#numbers.sequence(0, 1)}" class="officialCard">
-                <h1>Representative</h1>
-                <h2>Name</h2>
-                <h3>Salary: 120000</h3>
-                <h3>Assembly District: 11</h3>
-                <h3>Counties Served: County 1, County 2, County 3...</h3>
-                <h3>Committees: committee 1, committee 2, committee 3</h3>
+    <div th:if="${!officials.isEmpty()}" class="card-container">
+        <div th:each="num : ${#numbers.sequence(0, officials.size()-1)}" class="officialCard">
+                <h1 th:text="${officials.get(num).getOfficialType()}"></h1>
+                <h2 th:text="${officials.get(num).getName()}"></h2>
+                <h3 th:text="|Salary: ${#numbers.formatCurrency(officials.get(num).getSalary())}|"></h3>
+                <h3 th:text="|District: ${officials.get(num).getDistrictId()}|"></h3>
+                <h3 th:text="|Counties: ${counties.get(num)}|"></h3>
+                <h3 th:text="|Committees: ${committees.get(num)}|"></h3>
             </div>
         </div>
     </body>

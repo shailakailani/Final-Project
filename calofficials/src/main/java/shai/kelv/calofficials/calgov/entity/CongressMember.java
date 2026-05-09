@@ -1,9 +1,9 @@
 package shai.kelv.calofficials.calgov.entity;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 
 @Entity
-@Table(name="officials")
+@DiscriminatorValue("CONGRESSMAN")
 public class CongressMember extends Official{
-    private OfficialType officialType = OfficialType.CONGRESSMAN;
 }

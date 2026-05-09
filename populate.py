@@ -45,7 +45,7 @@ try:
     
     #populate districts
     db.execute("DELETE FROM districts")
-    for i in range(1, 3):
+    for i in range(0, 3):
         elemname = districts[i]
         elemConfig = districts[i]
         df = pd.read_csv('data/' + elemname + '.csv')
