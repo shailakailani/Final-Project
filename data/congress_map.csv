@@ -1,0 +1,53 @@
+district_id,counties,map_type,dtype
+1,"Butte, Glenn, Lake, Lassen, Mendocino, Plumas, Sierra, Sonoma, Tehama",CONGRESS,CongressionalDistrict
+2,"Del Norte, Humboldt, Marin, Mendocino, Modoc, Shasta, Siskiyou, Sonoma, Trinity",CONGRESS,CongressionalDistrict
+3,"El Dorado, Nevada, Placer, Sacramento",CONGRESS,CongressionalDistrict
+4,"Colusa, Lake, Napa, Placer, Sacramento, Sonoma, Sutter, Yolo, Yuba",CONGRESS,CongressionalDistrict
+5,"Alpine, Amador, Calaveras, El Dorado, Fresno, Inyo, Madera, Mariposa, Mono, San Joaquin, Stanislaus, Tuolumne",CONGRESS,CongressionalDistrict
+6,"Placer, Sacramento, Yolo",CONGRESS,CongressionalDistrict
+7,"El Dorado, Sacramento, San Joaquin",CONGRESS,CongressionalDistrict
+8,"Contra Costa, Sacramento, San Joaquin, Solano, Yolo",CONGRESS,CongressionalDistrict
+9,"Contra Costa, San Joaquin",CONGRESS,CongressionalDistrict
+10,"Alameda, Contra Costa",CONGRESS,CongressionalDistrict
+11,San Francisco,CONGRESS,CongressionalDistrict
+12,Alameda,CONGRESS,CongressionalDistrict
+13,"Fresno, Madera, Merced, San Joaquin, Stanislaus",CONGRESS,CongressionalDistrict
+14,Alameda,CONGRESS,CongressionalDistrict
+15,"San Francisco, San Mateo",CONGRESS,CongressionalDistrict
+16,"San Mateo, Santa Clara",CONGRESS,CongressionalDistrict
+17,"Alameda, Santa Clara",CONGRESS,CongressionalDistrict
+18,"Fresno, Kings, Monterey, San Benito, Santa Clara, Santa Cruz",CONGRESS,CongressionalDistrict
+19,"Monterey, San Luis Obispo, Santa Clara, Santa Cruz",CONGRESS,CongressionalDistrict
+20,"Fresno, Kern, Kings, Tulare",CONGRESS,CongressionalDistrict
+21,"Fresno, Tulare",CONGRESS,CongressionalDistrict
+22,"Fresno, Kern, Kings, Madera, Tulare",CONGRESS,CongressionalDistrict
+23,"Kern, Los Angeles, Riverside, San Bernardino",CONGRESS,CongressionalDistrict
+24,"San Luis Obispo, Santa Barbara, Ventura",CONGRESS,CongressionalDistrict
+25,"Imperial, Riverside, San Bernardino",CONGRESS,CongressionalDistrict
+26,"Los Angeles, Ventura",CONGRESS,CongressionalDistrict
+27,Los Angeles,CONGRESS,CongressionalDistrict
+28,"Los Angeles, San Bernardino",CONGRESS,CongressionalDistrict
+29,Los Angeles,CONGRESS,CongressionalDistrict
+30,Los Angeles,CONGRESS,CongressionalDistrict
+31,"Los Angeles, San Bernardino",CONGRESS,CongressionalDistrict
+32,"Los Angeles, Ventura",CONGRESS,CongressionalDistrict
+33,"Riverside, San Bernardino",CONGRESS,CongressionalDistrict
+34,Los Angeles,CONGRESS,CongressionalDistrict
+35,"Los Angeles, Riverside, San Bernardino",CONGRESS,CongressionalDistrict
+36,Los Angeles,CONGRESS,CongressionalDistrict
+37,Los Angeles,CONGRESS,CongressionalDistrict
+38,"Los Angeles, Orange",CONGRESS,CongressionalDistrict
+39,Riverside,CONGRESS,CongressionalDistrict
+40,"Orange, Riverside",CONGRESS,CongressionalDistrict
+41,"Los Angeles, Orange",CONGRESS,CongressionalDistrict
+42,"Los Angeles, Orange",CONGRESS,CongressionalDistrict
+43,Los Angeles,CONGRESS,CongressionalDistrict
+44,Los Angeles,CONGRESS,CongressionalDistrict
+45,"Los Angeles, Orange",CONGRESS,CongressionalDistrict
+46,Orange,CONGRESS,CongressionalDistrict
+47,Orange,CONGRESS,CongressionalDistrict
+48,"Riverside, San Diego",CONGRESS,CongressionalDistrict
+49,"Orange, San Diego",CONGRESS,CongressionalDistrict
+50,San Diego,CONGRESS,CongressionalDistrict
+51,San Diego,CONGRESS,CongressionalDistrict
+52,San Diego,CONGRESS,CongressionalDistrict

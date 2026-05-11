@@ -1,0 +1,58 @@
+committee,name,official_type
+1,Aging and Long-Term Care,ASSEMBLY_MEMBER
+2,Agriculture,ASSEMBLY_MEMBER
+3,Appropriations,ASSEMBLY_MEMBER
+4,"Arts, Entertainment, Sports, and Tourism",ASSEMBLY_MEMBER
+5,Banking and Finance,ASSEMBLY_MEMBER
+6,Budget,ASSEMBLY_MEMBER
+7,Business and Professions,ASSEMBLY_MEMBER
+8,Communications and Conveyance,ASSEMBLY_MEMBER
+9,"Economic Development, Growth, and Household Impact",ASSEMBLY_MEMBER
+10,Education,ASSEMBLY_MEMBER
+11,Elections,ASSEMBLY_MEMBER
+12,Emergency Management,ASSEMBLY_MEMBER
+13,Environmental Safety and Toxic Materials,ASSEMBLY_MEMBER
+14,Governmental Organization,ASSEMBLY_MEMBER
+15,Health,ASSEMBLY_MEMBER
+16,Higher Education,ASSEMBLY_MEMBER
+17,Housing and Community Development,ASSEMBLY_MEMBER
+18,Human Services,ASSEMBLY_MEMBER
+19,Insurance,ASSEMBLY_MEMBER
+20,Judiciary,ASSEMBLY_MEMBER
+21,Labor and Employment,ASSEMBLY_MEMBER
+22,Local Government,ASSEMBLY_MEMBER
+23,Military and Veterans Affairs,ASSEMBLY_MEMBER
+24,Natural Resources,ASSEMBLY_MEMBER
+25,Privacy and Consumer Protection,ASSEMBLY_MEMBER
+26,Public Employment and Retirement,ASSEMBLY_MEMBER
+27,Public Safety,ASSEMBLY_MEMBER
+28,Revenue and Taxation,ASSEMBLY_MEMBER
+29,Rules,ASSEMBLY_MEMBER
+30,Transportation,ASSEMBLY_MEMBER
+31,Utilities and Energy,ASSEMBLY_MEMBER
+32,"Water, Parks, and Wildlife",ASSEMBLY_MEMBER
+33,Agriculture,SENATOR
+34,Appropriations,SENATOR
+35,Banking and Financial Institutions,SENATOR
+36,Budget and Fiscal Review,SENATOR
+37,"Business, Professions and Economic Development",SENATOR
+38,Education,SENATOR
+39,Elections and Constitutional Amendments,SENATOR
+40,Emergency Management,SENATOR
+41,"Energy, Utilities and Communications",SENATOR
+42,Environmental Quality,SENATOR
+43,Governmental Organization,SENATOR
+44,Health,SENATOR
+45,Housing,SENATOR
+46,Human Services,SENATOR
+47,Insurance,SENATOR
+48,Judiciary,SENATOR
+49,"Labor, Public Employment and Retirement",SENATOR
+50,Local Government,SENATOR
+51,Military and Veterans Affairs,SENATOR
+52,Natural Resources and Water,SENATOR
+53,"Privacy, Digital Technologies, and Consumer Protection",SENATOR
+54,Public Safety,SENATOR
+55,Revenue and Taxation,SENATOR
+56,Rules,SENATOR
+57,Transportation,SENATOR
