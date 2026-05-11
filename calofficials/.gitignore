@@ -37,3 +37,5 @@ build/
 *.class
 *.html
 *.css
+*.csv
+*.db

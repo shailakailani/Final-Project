@@ -1,8 +1,6 @@
 package shai.kelv.calofficials.calgov.entity;
+import jakarta.persistence.DiscriminatorValue;
 
-import jakarta.persistence.Entity;
-
-@Entity
+@DiscriminatorValue("CONGRESS")
 public class CongressionalDistrict extends District {
-    private MapType mapType =  MapType.CONGRESS;
 }

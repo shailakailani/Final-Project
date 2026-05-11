@@ -13,18 +13,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="COMMENT")
+@Table(name="comments")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="PARENT_ID", nullable=true, unique=false)
+    @Column(name="parent_id", nullable=true, unique=false)
     private Long parentId;
-    @Column(name="USERNAME", nullable=true, unique=false)
+    @Column(name="username", nullable=true, unique=false)
     private String username;
-    @Column(name="MESSAGE", nullable=false)
+    @Column(name="message", nullable=false)
     private String message;
-    @Column(name="DATE")
+    @Column(name="date")
     private LocalDateTime date;
 
     public Comment(Long parentId, String username, String message){

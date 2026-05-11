@@ -1,25 +1,80 @@
 /**
  * Description: 
  * @author Shaila Lewis
- * @since 04.23.36
+ * @since 05.09.36
  */
 
 package api.controller;
+import shai.kelv.calofficials.calgov.entity.District;
+import shai.kelv.calofficials.calgov.entity.Official;
+import shai.kelv.calofficials.calgov.repo.CommitteeRepository;
+import shai.kelv.calofficials.calgov.repo.DistrictRepository;
+import shai.kelv.calofficials.calgov.repo.OfficialRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import java.util.ArrayList;
 
 @Controller
 public class SearchPageController {
+    @Autowired
+    private OfficialRepository officialRepository;
+    @Autowired
+    private DistrictRepository districtRepository;
+    @Autowired
+    private CommitteeRepository committeeRepository;
+
     /**
-     * Method connects specified url to an html page to view (search.html)
+     * Method connects specified url to an html page to view (search.html), and if user searches returns officials to view.
      * @param model information/element to be added to the page
      * @return html file name to load
-     */
+    */
     @GetMapping("/search")
-    public String searchPage(Model model) {
-        model.addAttribute("message","Are you trying to search something?");
-        return "search";
+    public String search(@RequestParam(value = "searchbar", required = false) String name, Model model) {
+        if (name != null && !name.isEmpty()) {
+            ArrayList<Official> results = new ArrayList<Official>();
+            ArrayList<String> counties = new ArrayList<String>();
+            ArrayList<String> committees = new ArrayList<String>();
+
+            try{
+                if(NumberUtils.isDigits(name) && !officialRepository.findByDistrictId(Math.abs(Long.parseLong(name))).isEmpty()){
+                    results.addAll(officialRepository.findByDistrictId(Math.abs(Long.parseLong(name))));
+                } else if(StringUtils.isAlpha(name) && !officialRepository.findByNameContainingIgnoreCase(name).isEmpty()){
+                    results.addAll(officialRepository.findByNameContainingIgnoreCase(name));
+                }
+            }catch (Exception e){
+                System.out.print("SOMETHING WENT WRONG: " + e);
+            }
+
+            //find counties and committees if we get a list of officials
+            for(Official official : results){
+                String committee = "";
+                District officerDistrict = districtRepository.findByDistrictIdAndMapType(official.getDistrictId(), official.getOfficialType().getMapType());
+                String officerCounties = officerDistrict != null? officerDistrict.getCounties().toString() : "";
+                officerCounties = officerCounties.replace("[", " ");
+                officerCounties = officerCounties.replace("]", " ");
+
+                for(Long id : official.getCommitteeIds()){
+                    //we inputed the committee ids off by one
+                    committee += committeeRepository.findCommitteeById(id-1) != null? committeeRepository.findCommitteeById(id-1).getName() : "";
+                    
+                }
+                
+                committees.add(committee.isBlank()? "None" : committee);
+                counties.add(officerCounties);  
+            }
+
+            model.addAttribute("officials", results);
+            model.addAttribute("counties", counties);
+            model.addAttribute("committees", committees);
+            model.addAttribute("searchbar", name);
+            model.addAttribute("message","Searched for: " + name);
+        }
+            model.addAttribute("message","Search Something");
+        return "search"; 
     }
-    
 }

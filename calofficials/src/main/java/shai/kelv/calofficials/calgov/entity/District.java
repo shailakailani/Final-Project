@@ -1,8 +1,14 @@
-package shai.kelv.calofficials.calgov.entity;
+/** 
+ * Description: Defining columns for district table as well as getters/setters
+ * @author Shaila Lewis, Kelvin Myat
+ * @since 05.09.2026
+ */
 
+package shai.kelv.calofficials.calgov.entity;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,22 +16,28 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="DISTRICTS")
+@Table(name="districts")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) 
+@DiscriminatorColumn(name = "map_type")
 public class District {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="DISTRICT_ID", nullable = false)
+    @Column(name="district_id", nullable = false)
     private Long districtId;  
 
     @ElementCollection
+    @Column(name="counties")
     private List<String> counties;
     
     @Enumerated(EnumType.STRING)
+    @Column(name="map_type", nullable = false, insertable = false, updatable = false)
     private MapType mapType;
     
  /**
