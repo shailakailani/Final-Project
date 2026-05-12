@@ -7,6 +7,7 @@
 package shai.kelv.calofficials.calgov.entity;
 import java.util.List;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.ElementCollection;
@@ -18,6 +19,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -33,6 +36,9 @@ public class District {
     private Long districtId;  
 
     @ElementCollection
+    @CollectionTable(name = "district_counties", 
+    joinColumns ={ @JoinColumn(name = "district_id", referencedColumnName = "district_id"),
+    @JoinColumn(name = "map_type", referencedColumnName = "map_type")})
     @Column(name="counties")
     private List<String> counties;
     

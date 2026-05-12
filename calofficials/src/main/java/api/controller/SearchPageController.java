@@ -73,7 +73,6 @@ public class SearchPageController {
             model.addAttribute("counties", counties);
             model.addAttribute("committees", committees);
             model.addAttribute("searchbar", name);
-            model.addAttribute("message", name);
         }
             model.addAttribute("message","Search Something");
         return "search"; 

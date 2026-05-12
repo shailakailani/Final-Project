@@ -15,4 +15,6 @@ public enum MapType {
                 return OfficialType.ASSEMBLY_MEMBER;        
         }
     }
+
+   
 }
