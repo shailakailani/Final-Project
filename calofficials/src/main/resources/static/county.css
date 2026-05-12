@@ -7,22 +7,28 @@
 }
 
 .officialCard{
-    background-color: rgb(242, 220, 159);
-    padding: 1%;
-    border: 2px solid peru;
+    background-color: rgb(217, 251, 255);
+    padding: 4%;
+    border: 2px solid rgb(84, 105, 225);
     border-radius: 4%;
 }
 
 .input{
-    --input-border: cadetblue;
-    --input-background: honeydew;
-    --input-text-color:darkslategray;
+    --input-border: rgb(84, 105, 225);
+    --input-background: rgb(240, 253, 255);
+    --input-text-color:#9EB5FF;
     width: 200px;
     height: 25px;
     border-radius: 10%;
     border: 1px solid var(--input-border);
     background-color: var(--input-background);
-    font-family: 'Syne Mono';
+    font-family: 'Tenor Sans';
     color: var(--input-text-color);
     margin-bottom: 2%;
+}
+h1,h2{
+    color:#798cc9;
+}
+html{
+    background-color:#f1f5ff;
 }
