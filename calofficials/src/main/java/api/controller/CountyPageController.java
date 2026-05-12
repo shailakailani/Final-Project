@@ -7,7 +7,6 @@ package api.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -59,9 +58,10 @@ public class CountyPageController {
                                 default:
                                     dist[1]=OfficialType.ASSEMBLY_MEMBER;        
                             }
-                        results.addAll(officialRepository.findAllByDistrictIdAndMapType(dist[0],  dist[1]));
-                        List<Official> temp = results.stream().distinct().collect(Collectors.toList());
-                        results = new ArrayList<Official>(temp);
+                    results.addAll(officialRepository.findAllByDistrictIdAndMapType(dist[0],  dist[1]));
+                    List<Official> temp = results.stream().distinct().collect(Collectors.toList());
+                    results = new ArrayList<Official>(temp);
+                      
                     }
                 }
             }catch (Exception e){

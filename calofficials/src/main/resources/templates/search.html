@@ -13,7 +13,7 @@
             <input class="input" th:value="${searchterm}" type="text" name="searchbar" placeholder="Enter official name or district number">
         </form>
     </search>
-    <div th:if="${!officials.contains(null) && officials.size()>0}" class="card-container">
+    <div th:if="${officials != null && !#lists.contains(officials, null) && !officials.isEmpty()}" class="card-container">
         <div th:each="num : ${#numbers.sequence(0, officials.size()-1)}" class="officialCard">
                 <h1 th:text="${officials.get(num).getOfficialType()}"></h1>
                 <h2 th:text="${officials.get(num).getName()}"></h2>
