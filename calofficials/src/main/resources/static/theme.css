@@ -6,21 +6,20 @@
 /*
 * Importing google fonts for use
 */
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Coiny&family=Coming+Soon&family=Handjet:wght,ELSH@100..900,2&family=Iceberg&family=Inconsolata:wght@200..900&family=Just+Me+Again+Down+Here&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kumar+One&family=Londrina+Sketch&family=M+PLUS+2:wght@100..900&family=Mansalva&family=Moirai+One&family=Noto+Sans+Mono:wght@100..900&family=Offside&family=Pompiere&family=Rampart+One&family=Rubik+Iso&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Syne+Mono&family=Tenor+Sans&family=Text+Me+One&family=Tourney:ital,wght@0,100..900;1,100..900&family=Train+One&family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&family=WDXL+Lubrifont+TC&family=Yeseva+One&family=Yomogi&family=Ysabeau+SC:wght@1..1000&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Suse Mono&family=Coming+Soon&family=Handjet:wght,ELSH@100..900,2&family=Iceberg&family=Inconsolata:wght@200..900&family=Just+Me+Again+Down+Here&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kumar+One&family=Londrina+Sketch&family=M+PLUS+2:wght@100..900&family=Mansalva&family=Moirai+One&family=Noto+Sans+Mono:wght@100..900&family=Offside&family=Pompiere&family=Rampart+One&family=Rubik+Iso&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Syne+Mono&family=Tenor+Sans&family=Text+Me+One&family=Tourney:ital,wght@0,100..900;1,100..900&family=Train+One&family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&family=WDXL+Lubrifont+TC&family=Yeseva+One&family=Yomogi&family=Ysabeau+SC:wght@1..1000&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
 
 h1 {
-    color:#ff9e9e;
-    -webkit-text-stroke: .1px purple;
+    color:#19747E;
 }
 
 h2{
-    color: #ff9e9e;
-    -webkit-text-stroke: .05px rgb(82, 0, 37);
+    color: #29818b;
+    font-family: 'Ysabeau SC';
 }
 
 h3{
-    color: #19747E;
-    font-family: 'Syne Mono';
+    color: #000000;
+    font-family: 'Tenor Sans';
 }
 
 .half-col{
@@ -42,35 +41,31 @@ h3{
 }
 
 button{
-    --button-text-border-color: rgb(155, 155, 255); 
-    font-family: "Coiny";
+    --button-text-border-color: #19747E; 
+    font-family: "Suse Mono";
     border: 2px solid;
     padding: 1%;
     border-radius: 15%;
-    background-color: var(--button-color, rgb(203, 203, 255));
+    background-color: var(--button-color,#b0dfe4);
     -webkit-text-stroke: .8px var(--button-text-border-color);
-    -webkit-text-fill-color: var(--button-text-color, #9EB5FF);
+    -webkit-text-fill-color: var(--button-text-color, #19747E);
     font-size: 1.1em;
-    border-color: var(--button-border-color, --button-text-border-color);
+    border-color: var(--button-border-color, #19747E);
 }
 
 .card-title{ 
-    color:#9EB5FF;
-    -webkit-text-stroke: .1px #171B8C;
+    color:#29818b;
     
 }
 
 .card-text {
-    color:steelblue;
-    font-family: "Syne Mono";
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-width: .01px;
-    -webkit-text-stroke-color: #171b8c;
+    color:black;
+    font-family: 'Tenor Sans';
 }
 
 html {
     background-color: #D1E8E2;
-    font-family: "Coiny" ;
+    font-family: "Suse Mono" ;
 }
 
 body{

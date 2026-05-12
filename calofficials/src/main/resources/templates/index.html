@@ -25,14 +25,14 @@
                 <h2 class="card-text">
                     Click on the Search button below or in the menu, and enter the name of an official or a number corresponding to the district you're looking for.
                 </h2>
-                <button style="--button-color: mistyrose; --button-text-color: lightpink; --button-border-color: darksalmon; --button-text-border-color: palevioletred;" th:onclick="|window.location.href='@{/search}'|"> Search </button>
+                <button th:onclick="|window.location.href='@{/search}'|"> Search </button>
             </div>
             <div class="card">
                 <h1 class="card-title">
                     Selecting County
                 </h1>
                 <h2 class="card-text">Click on the County button below or in the menu, and enter the name of the county you live in on the search bar. </h2>
-                <button style="--button-color: mistyrose; --button-text-color: lightpink; --button-border-color: darksalmon; --button-text-border-color: palevioletred;"
+                <button
                 th:onclick="|window.location.href='@{/county}'|">County</button>
             </div>
         </div>

@@ -5,7 +5,6 @@
  */
 
 package api.controller;
-import shai.kelv.calofficials.calgov.entity.District;
 import shai.kelv.calofficials.calgov.entity.Official;
 import shai.kelv.calofficials.calgov.repo.CommitteeRepository;
 import shai.kelv.calofficials.calgov.repo.DistrictRepository;
@@ -41,8 +40,8 @@ public class SearchPageController {
             ArrayList<String> committees = new ArrayList<String>();
 
             try{
-                if(NumberUtils.isDigits(name) && !officialRepository.findByDistrictId(Math.abs(Long.parseLong(name))).isEmpty()){
-                    results.addAll(officialRepository.findByDistrictId(Math.abs(Long.parseLong(name))));
+                if(NumberUtils.isDigits(name) && !officialRepository.findAllByDistrictId(Math.abs(Long.parseLong(name))).isEmpty()){
+                    results.addAll(officialRepository.findAllByDistrictId(Math.abs(Long.parseLong(name))));
                 } else if(StringUtils.isAlpha(name) && !officialRepository.findByNameContainingIgnoreCase(name).isEmpty()){
                     results.addAll(officialRepository.findByNameContainingIgnoreCase(name));
                 }
@@ -53,26 +52,27 @@ public class SearchPageController {
             //find counties and committees if we get a list of officials
             for(Official official : results){
                 String committee = "";
-                District officerDistrict = districtRepository.findByDistrictIdAndMapType(official.getDistrictId(), official.getOfficialType().getMapType());
-                String officerCounties = officerDistrict != null? officerDistrict.getCounties().toString() : "";
+                String officerCounties = String.join(", ", districtRepository.findCountiesByDistrictIdAndMapType(official.getDistrictId(), official.getOfficialType().getMapType().toString()));
+                
+                //formatting
                 officerCounties = officerCounties.replace("[", " ");
                 officerCounties = officerCounties.replace("]", " ");
-
+                officerCounties = officerCounties.replace(", ", " ");
+                officerCounties = officerCounties.replace(",,", ",");
+                
                 for(Long id : official.getCommitteeIds()){
-                    //we inputed the committee ids off by one
-                    committee += committeeRepository.findCommitteeById(id-1) != null? committeeRepository.findCommitteeById(id-1).getName() : "";
-                    
+                    committee += committeeRepository.findCommitteeById(id) + ", ";
                 }
                 
                 committees.add(committee.isBlank()? "None" : committee);
                 counties.add(officerCounties);  
             }
 
+            //show results
             model.addAttribute("officials", results);
             model.addAttribute("counties", counties);
             model.addAttribute("committees", committees);
             model.addAttribute("searchbar", name);
-            model.addAttribute("message","Searched for: " + name);
         }
             model.addAttribute("message","Search Something");
         return "search"; 
