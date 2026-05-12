@@ -2,6 +2,7 @@ package shai.kelv.calofficials.calgov.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.ElementCollection;
@@ -13,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,7 +41,13 @@ public class Official {
     private Long districtId;
 
     @ElementCollection
-    @Column(name="committees")
+    @CollectionTable(name = "official_committee_ids",
+        joinColumns = {
+            @JoinColumn(name = "official_id", referencedColumnName = "district_id"),
+            @JoinColumn(name = "official_type", referencedColumnName = "official_type")
+        }
+    )
+    @Column(name="committee_id")
     private List<Long> committeeIds;
 
     @Enumerated(EnumType.STRING)
@@ -94,6 +102,14 @@ public class Official {
      */
     public Party getParty() {
         return party;
+    }
+
+    /**
+     * Gets the official salary.
+     * @return the salary
+     */
+    public Long getSalary() {
+        return this.salary;
     }
 
     /**
