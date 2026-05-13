@@ -1,3 +1,8 @@
+/**
+ * Description:
+ * @author Shaila Lewis, Kevin Myat
+ * @since 05.12.26
+*/
 package shai.kelv.calofficials.calgov.entity;
 
 import java.util.List;
