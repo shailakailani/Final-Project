@@ -107,7 +107,7 @@ public class CountyPageController {
                 System.out.print("Something went wrong while retrieving committees and counties: " + e);
             }
         }
-            model.addAttribute("message",county != null || county.isEmpty()? "You searched for: " + county:"What's your county?");
+            model.addAttribute("message",county != null && !county.isEmpty()? "You searched for: " + county:"What's your county?");
         return "county"; 
     }
     
