@@ -6,6 +6,7 @@
         <title>Comments CalOfficials</title>
     </head>
     <body>
+<<<<<<< HEAD
         <div th:replace="~{fragments/menu :: menu}"></div>
 
         <h1 th:text="${message}"></h1>
@@ -21,6 +22,16 @@
                  th:each="comment : ${comments}" class="commentCard">
                 <h2 th:text="'@' + ${comment.username}"></h2>
                 <p th:text="${comment.message}"></p>
+=======
+        <!--
+        <!--div th:replace="fragments/menu :: menu"></div>-->
+    -->
+        <h1 th:text="${message}"></h1>
+        <div th:if= "${comments}" class="card-container">
+            <div th:each="comment : ${coments}" class="commentCard">
+                <h2>@ANONYMOUS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium exercitationem neque dicta ad autem dolor omnis eaque totam! Provident sint quisquam minus velit vero ratione quibusdam doloribus tempora deserunt!</p>
+>>>>>>> ebabe6e4fee33caf1f25ce4d4f93d2e9b1a0d353
             </div>
 
             <div th:if="${comments == null or comments.isEmpty()}" class="commentCard">

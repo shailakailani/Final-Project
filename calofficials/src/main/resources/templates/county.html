@@ -6,11 +6,16 @@
         <link rel="stylesheet" th:href="@{/county.css}">
     </head>
     <body>
+<<<<<<< HEAD
         <div th:replace="~{fragments/menu :: menu}"></div>
 
+=======
+          <!--div th:replace="fragments/menu :: menu"></div>-->
+>>>>>>> ebabe6e4fee33caf1f25ce4d4f93d2e9b1a0d353
         <h1 th:text="${message}"></h1>
 
         <search>
+<<<<<<< HEAD
             <form action="/county" method="get">
                 <input class="input"
                        type="text"
@@ -21,12 +26,23 @@
         </search>
 
         <div th:if="${officials != null and !officials.isEmpty()}" class="card-container">
+=======
+            <form action="/county">
+                <input class="input" name="search_bar" placeholder="Enter County Name">
+            </form>
+        </search>
+        <div th:if="${officials != null && !#lists.contains(officials, null) && !officials.isEmpty()}" class="card-container">
+>>>>>>> ebabe6e4fee33caf1f25ce4d4f93d2e9b1a0d353
             <div th:each="num : ${#numbers.sequence(0, officials.size()-1)}" class="officialCard">
                 <h1 th:text="${officials.get(num).getOfficialType()}"></h1>
                 <h2 th:text="${officials.get(num).getName()}"></h2>
                 <h3 th:text="|Salary: ${#numbers.formatCurrency(officials.get(num).getSalary())}|"></h3>
                 <h3 th:text="|District: ${officials.get(num).getDistrictId()}|"></h3>
+<<<<<<< HEAD
                 <h3 th:text="|Counties Served: ${counties.get(num)}|"></h3>
+=======
+                <h3 th:text="|Counties: ${counties.get(num)}|"></h3>
+>>>>>>> ebabe6e4fee33caf1f25ce4d4f93d2e9b1a0d353
                 <h3 th:text="|Committees: ${committees.get(num)}|"></h3>
             </div>
         </div>
