@@ -4,21 +4,29 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" th:href="@{/comments.css}">
         <title>Comments CalOfficials</title>
-        <meta>
     </head>
     <body>
-         <div th:replace="fragments/menu :: menu"></div>
+        <div th:replace="~{fragments/menu :: menu}"></div>
+
         <h1 th:text="${message}"></h1>
+
+        <form action="/comments" method="post" style="margin-bottom: 20px;">
+            <input type="text" name="username" placeholder="Enter username" style="margin-right: 10px;">
+            <input type="text" name="message" placeholder="Enter message" required style="margin-right: 10px; width: 300px;">
+            <button type="submit">Post</button>
+        </form>
+
         <div class="card-container">
-            <div th:each="official : ${#numbers.sequence(0, 5)}" class="commentCard">
-                <h2>@ANONYMOUS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium exercitationem neque dicta ad autem dolor omnis eaque totam! Provident sint quisquam minus velit vero ratione quibusdam doloribus tempora deserunt!</p>
+            <div th:if="${comments != null and !comments.isEmpty()}"
+                 th:each="comment : ${comments}" class="commentCard">
+                <h2 th:text="'@' + ${comment.username}"></h2>
+                <p th:text="${comment.message}"></p>
             </div>
-            <div class="commentCard">
-                <h2>@sharonkelly</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur ratione beatae quae officiis cupiditate tenetur laudantium dolor magni amet aspernatur similique hic, ipsam fuga tempore corrupti id earum nesciunt nisi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia enim nihil consectetur facilis magni voluptatem maiores ducimus. Laborum earum placeat eveniet repudiandae molestias aut modi! Cum laudantium sequi expedita.</p>
+
+            <div th:if="${comments == null or comments.isEmpty()}" class="commentCard">
+                <h2>@anonymous</h2>
+                <p>No comments yet. Be the first to post one.</p>
             </div>
         </div>
-          
     </body>
 </html>
