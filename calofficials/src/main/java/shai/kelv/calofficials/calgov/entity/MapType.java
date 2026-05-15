@@ -15,6 +15,31 @@ public enum MapType {
                 return OfficialType.ASSEMBLY_MEMBER;        
         }
     }
+    public static OfficialType getOfficialType(Object str){
+        switch(str.toString()){
+            case "SENATE":
+                return OfficialType.SENATOR;
+            case "CONGRESS":
+                return OfficialType.CONGRESSMAN;
+            case "ASSEMBLY":
+                return OfficialType.ASSEMBLY_MEMBER;   
+            default:
+                return null;     
+        }
+    }
+
+    public static MapType getMapType(String str){
+        switch(str){
+            case "SENATE":
+                return MapType.SENATE;
+            case "CONGRESS":
+                return MapType.CONGRESS;
+            case "ASSEMBLY":
+                return MapType.ASSEMBLY;      
+            default:
+                return null;      
+        }
+    }
 
    
 }

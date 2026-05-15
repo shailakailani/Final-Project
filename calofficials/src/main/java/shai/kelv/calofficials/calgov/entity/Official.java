@@ -74,7 +74,7 @@ public class Official {
      * @return the id
      */
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     /**
@@ -90,7 +90,7 @@ public class Official {
      * @return the name
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -130,7 +130,7 @@ public class Official {
      * @return the district id
      */
     public Long getDistrictId() {
-        return districtId;
+        return this.districtId;
     }
 
     /**
@@ -146,7 +146,7 @@ public class Official {
      * @return the committee ids
      */
     public List<Long> getCommitteeIds() {
-        return committeeIds;
+        return this.committeeIds;
     }
 
     /**
@@ -162,7 +162,15 @@ public class Official {
      * @return the official type
      */
     public OfficialType getOfficialType() {
-        return officialType;
+        return this.officialType;
+    }
+
+    public String getOfficialTitle() {
+        return this.officialType.toString().replace("_", " ");
+    }
+
+    public MapType getMapType(){
+        return this.officialType.getMapType();
     }
 
     /**

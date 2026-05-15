@@ -13,15 +13,12 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface DistrictRepository extends JpaRepository<District, Long> {
-  @Query(value = """
-        SELECT DISTINCT districts.district_id, districts.map_type FROM districts  
-        JOIN district_counties 
-          ON districts.district_id = district_counties.district_id 
-          AND districts.map_type = district_counties.map_type
-        WHERE district_counties.counties LIKE %:county%
-        """, nativeQuery = true)
-    List<Object[]> findAllByCountiesContainingIgnoringCase(@Param("county") String county);
-
+@Query(value = "SELECT DISTINCT d.district_id, d.map_type FROM districts d " +
+               "JOIN district_counties c ON d.district_id = c.district_id " +
+               "AND d.map_type = c.map_type " +
+               "WHERE LOWER(c.counties) LIKE LOWER(CONCAT('%', :county, '%'))", 
+       nativeQuery = true)
+  List<Object[]> findByCountiesContainingIgnoreCase(String county);
 
     @Query(value = "SELECT counties FROM district_counties WHERE district_counties.map_type = :mapType AND district_counties.district_id = :districtId;", nativeQuery = true)
     List<String> findCountiesByDistrictIdAndMapType(@Param("districtId") Long districtId, @Param("mapType") String mapType);

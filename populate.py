@@ -64,7 +64,7 @@ try:
         df.to_sql('districts', db, if_exists='append', dtype= {'map_type': 'STRING', 'dtype': 'STRING'}, index=False)
 
         #add list colums
-        df_list['counties'] = df_list['counties'].astype(str).str.split()
+        df_list['counties'] = df_list['counties'].astype(str).str.replace(" ","").str.split(",")
         df_list = df_list.explode('counties')
         df_list.to_sql('district_counties', db, if_exists= 'append', index= False)
         print(elemname + ' have been populated!')

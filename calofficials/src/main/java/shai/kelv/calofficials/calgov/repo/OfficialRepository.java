@@ -1,4 +1,4 @@
-/** 
+ /** 
  * Description: Creating querying functions for officials table
  * @author Shaila Lewis
  * @since 05.07.2026
@@ -18,5 +18,5 @@ public interface OfficialRepository extends JpaRepository<Official, Long> {
     List<Official> findByNameContainingIgnoreCase(String name);
 
     @Query("SELECT DISTINCT official FROM Official official LEFT JOIN FETCH official.committeeIds WHERE official.districtId = :districtId AND official.officialType = :officialType") 
-    List<Official> findAllByDistrictIdAndMapType(@Param("districtId") Object districtId, @Param("officialType") Object officialType);
+    List<Official> findAllByDistrictIdAndOfficialType(@Param("districtId") Object districtId, @Param("officialType") Object officialType);
 }

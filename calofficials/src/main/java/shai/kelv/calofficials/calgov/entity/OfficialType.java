@@ -21,6 +21,21 @@ public enum OfficialType{
         }
     }
 
+
+    public static OfficialType getOfficialType(Object district){
+        switch(district.toString()){
+            case "SENATOR":
+                return OfficialType.SENATOR;
+            case "CONGRESSMAN":
+                return OfficialType.CONGRESSMAN;
+            case "ASSEMBLY_MEMBER":
+                return OfficialType.ASSEMBLY_MEMBER;      
+            default:
+                return null;      
+        }
+    }
+
+   
     public String toString(){
         switch(this){
             case SENATOR:

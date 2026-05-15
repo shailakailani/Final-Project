@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CustomFuncs",
+            "request": "launch",
+            "mainClass": "api.service.CustomFuncs",
+            "projectName": "calofficials"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
