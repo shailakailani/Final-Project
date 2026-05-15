@@ -1,16 +1,17 @@
-/** 
+/**
  * Description: Creating querying functions for district table
  * @author Shaila Lewis
  * @since 05.07.2026
  */
-
 package shai.kelv.calofficials.calgov.repo;
-import shai.kelv.calofficials.calgov.entity.District;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+import shai.kelv.calofficials.calgov.entity.District;
 
 public interface DistrictRepository extends JpaRepository<District, Long> {
 @Query(value = "SELECT DISTINCT d.district_id, d.map_type FROM districts d " +

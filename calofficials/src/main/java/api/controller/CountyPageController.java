@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+package api.controller;
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+
+=======
 /**
  * Description: 
  * @author Shaila Lewis
@@ -36,6 +53,6 @@ public class CountyPageController {
         }
             model.addAttribute("message","Search" + (county != null && !county.isBlank()? "ed: " + county : " Something"));
         return "county"; 
+>>>>>>> ebabe6e4fee33caf1f25ce4d4f93d2e9b1a0d353
     }
-    
 }
