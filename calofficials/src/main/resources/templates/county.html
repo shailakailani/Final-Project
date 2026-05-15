@@ -8,6 +8,7 @@
     <body>
         <div th:replace="~{fragments/menu :: menu}"></div>
 
+        <div id="container" >
         <h1 th:text="${message}"></h1>
 
         <search>
@@ -20,7 +21,7 @@
         </search>
 
         <div th:if="${officials != null and !officials.isEmpty()}" class="card-container">
-=======
+
             <form action="/county">
                 <input class="input" name="search_bar" placeholder="Enter County Name">
             </form>
@@ -35,9 +36,6 @@
                 <h3 th:text="|Committees: ${official.committees}|"></h3>
             </div>
         </div>
-
-        <div th:if="${officials != null and officials.isEmpty() and searchterm != null and !searchterm.isBlank()}">
-            <p>No officials found for that county.</p>
         </div>
     </body>
     </body>
