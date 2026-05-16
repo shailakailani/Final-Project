@@ -1,12 +1,10 @@
-/**
-* Description: customization for all our pages
-* @author Shaila
-*/
-
 /*
-* Importing google fonts for use
+Fonts to use
 */
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Suse Mono&family=Coming+Soon&family=Handjet:wght,ELSH@100..900,2&family=Iceberg&family=Inconsolata:wght@200..900&family=Just+Me+Again+Down+Here&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Kumar+One&family=Londrina+Sketch&family=M+PLUS+2:wght@100..900&family=Mansalva&family=Moirai+One&family=Noto+Sans+Mono:wght@100..900&family=Offside&family=Pompiere&family=Rampart+One&family=Rubik+Iso&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Syne+Mono&family=Tenor+Sans&family=Text+Me+One&family=Tourney:ital,wght@0,100..900;1,100..900&family=Train+One&family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&family=WDXL+Lubrifont+TC&family=Yeseva+One&family=Yomogi&family=Ysabeau+SC:wght@1..1000&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans+Mono:wght@100..900&family=Offside&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Syne+Mono&family=Tenor+Sans&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&family=Yeseva+One&family=Yomogi&family=Ysabeau+SC:wght@1..1000&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 h1 {
     color:#19747E;
@@ -65,6 +63,7 @@ button{
 html {
     background-color:var(--bg-color, #D1E8E2);
     font-family: "Suse Mono" ;
+    flex-wrap: wrap;
 }
 
 body {
