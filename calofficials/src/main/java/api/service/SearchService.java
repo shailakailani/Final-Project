@@ -1,3 +1,8 @@
+/**
+ * Service class for handling searching for districts and officials logic.
+ * @author Shaila Lewis, Kelvin Myat
+ * @since 05.15.26
+ */
 package api.service;
 import api.dto.OfficialDTO;
 import shai.kelv.calofficials.calgov.entity.Official;
@@ -23,6 +28,11 @@ public class SearchService {
     @Autowired
     private CommitteeRepository committeeRepository;
 
+    /**
+     * Splits strings based on the next capital letter
+     * @param str
+     * @return string of separated cammelcase string
+     */
     private String splitString(String str){
         StringBuilder ans = new StringBuilder();
         ans.append(str.charAt(0));
@@ -32,6 +42,11 @@ public class SearchService {
         return ans.toString();
     }
 
+    /**
+     * Finds committees based on a list of ids
+     * @param ids to search with
+     * @return String of all committees found
+     */
     private String findCommittees(List<Long> ids){
         ArrayList<String> committeeNames = new ArrayList<String>(0);
         String result = "";
@@ -45,6 +60,12 @@ public class SearchService {
         return result.isBlank()? "None" : result;
     }
 
+    /**
+     * Finds counties based on a district id and map type
+     * @param id to search with
+     * @param mapType string to get particular district
+     * @return String of all counties found
+     */
     private String findCounties(Long id, String mapType){
         ArrayList<String> counties = new ArrayList<String>();
         counties.addAll(districtRepository.findCountiesByDistrictIdAndMapType(id, mapType));
@@ -53,6 +74,11 @@ public class SearchService {
         return result;
     }
 
+    /**
+     * Find all officials associated with a county
+     * @param county nonempty string to query with
+     * @return List of officials
+     */
     public List<OfficialDTO> findOfficialsByCounty(String county){
         ArrayList<OfficialDTO> results = new ArrayList<OfficialDTO>();
         ArrayList<Official> officers = new ArrayList<Official>();
@@ -85,6 +111,11 @@ public class SearchService {
         return results;
     }
 
+    /**
+     * Find all officials associated with an id or name
+     * @param county nonempty string to query with (can be a number or name)
+     * @return List of officials
+     */
     public List<OfficialDTO> findOfficials(String term){
         ArrayList<OfficialDTO> results = new ArrayList<OfficialDTO>();
         ArrayList<Official> officers = new ArrayList<Official>();
@@ -111,6 +142,13 @@ public class SearchService {
         return results;
     }
 
+    /**
+     * Method merges committes, official, and their counties into a simpler object to display.
+     * @param official the official to convert
+     * @param commitees official is in
+     * @param counties official serves
+     * @return DTO to simplify usage in our front end
+     */
     private OfficialDTO convertToOfficialDTO(Official official, String commitees, String counties){
         return new OfficialDTO(
             official.getName(),

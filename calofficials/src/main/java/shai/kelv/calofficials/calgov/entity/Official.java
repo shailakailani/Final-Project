@@ -1,12 +1,10 @@
 /**
- * Description:
+ * Description: Official class to be extended by official subclasses and to map in the calgov database
  * @author Shaila Lewis, Kevin Myat
  * @since 05.12.26
 */
 package shai.kelv.calofficials.calgov.entity;
-
 import java.util.List;
-
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
@@ -59,6 +57,9 @@ public class Official {
     @Column(name="official_type", nullable = false, insertable = false, updatable = false)
     private OfficialType officialType;
 
+    /** Method returns officer info
+     * @return String of official info
+     */
     public String toString(){
         StringBuilder official = new StringBuilder("Salary: ");
         official.append(this.salary + "\n District ID: " + this.districtId);
@@ -69,7 +70,7 @@ public class Official {
         return official.toString();
     }
     
- /**
+    /**
      * Gets the official id.
      * @return the id
      */
@@ -165,10 +166,18 @@ public class Official {
         return this.officialType;
     }
 
+    /**
+     * Method gets job position of official
+     * @return string of job title
+     */
     public String getOfficialTitle() {
         return this.officialType.toString().replace("_", " ");
     }
 
+    /**
+     * Returns map type of district official works in
+     * @return
+     */
     public MapType getMapType(){
         return this.officialType.getMapType();
     }

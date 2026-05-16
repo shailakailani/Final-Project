@@ -1,3 +1,9 @@
+/**
+ * Description: Enum for map type to facilitate filtering in database
+ * @author Shaila Lewis
+ * @since 05.09.2026
+ */
+
 package shai.kelv.calofficials.calgov.entity;
 
 public enum MapType {

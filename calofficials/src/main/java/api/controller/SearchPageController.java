@@ -1,5 +1,5 @@
 /**
- * Description: 
+ * Description: Manages requests for search.html
  * @author Shaila Lewis
  * @since 05.09.36
  */
@@ -17,6 +17,10 @@ import java.util.ArrayList;
 public class SearchPageController {
     private final SearchService searchService;
 
+    /**
+     * Constructor for SearchPageController
+     * @param searchService service that handles querying logic
+     */
     public SearchPageController (SearchService searchService){
         this.searchService = searchService;
     }

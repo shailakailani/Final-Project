@@ -1,5 +1,5 @@
 /**
- * Description:
+ * Description: Addresses class to be turned into a table
  * @author Shaila Lewis, Kelvin Myat
  * @since 05.09.2026
  */

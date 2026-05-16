@@ -11,7 +11,7 @@ The workspace contains:
     - `main`:
         - `java`: folder to maintain classes and entrypoints organized.
             - `api/controller`: folder containing controllers that connect URLs to pages and features.
-            - `api/service`: folder containing service classes for search and comment logic.
+            - `api/service`: folder containing service classes for searching our government information and managing the comments logic.
             - `api/dto`: folder containing DTO classes used to display official information.
             - `shai/kelv/calofficials/calgov`: folder containing government official entities and repositories.
             - `shai/kelv/calofficials/comments`: folder containing comment entity and repository files.

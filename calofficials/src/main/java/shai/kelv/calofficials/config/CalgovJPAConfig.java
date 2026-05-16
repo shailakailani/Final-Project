@@ -1,7 +1,7 @@
 /**
  * Description: Configuration for calgov.db
  * @author Shaila Lewis
- * @since 04.12.26
+ * @since 05.15.26
  */
 
 package shai.kelv.calofficials.config;
@@ -24,6 +24,12 @@ import jakarta.persistence.EntityManagerFactory;
     transactionManagerRef = "calgovTransactionManager"
 )
 public class CalgovJPAConfig {
+    /**
+     * Defining entity manager factory that manages jpa structure and maps java classes to the tables in database
+     * @param builder builder to map java to the database
+     * @param dataSource factory for connections to database
+     * @return bean 
+     */
     @Primary
     @Bean
     public LocalContainerEntityManagerFactoryBean calgovEntityManagerFactory(
@@ -37,6 +43,11 @@ public class CalgovJPAConfig {
                 .build();
     }
 
+    /**
+     * Defined transaction manager for calgov.db
+     * @param emf entity manager for calgov 
+     * @return Platform Transaction Manager
+     */
     @Bean
     public PlatformTransactionManager calgovTransactionManager(
             @Qualifier("calgovEntityManagerFactory") EntityManagerFactory emf) {

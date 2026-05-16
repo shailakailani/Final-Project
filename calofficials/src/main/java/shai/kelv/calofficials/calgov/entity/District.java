@@ -1,5 +1,5 @@
 /** 
- * Description: Defining columns for district table as well as getters/setters
+ * Description: Defining class for district table as well as getters/setters
  * @author Shaila Lewis, Kelvin Myat
  * @since 05.09.2026
  */
@@ -45,7 +45,7 @@ public class District {
     @Column(name="map_type", nullable = false, insertable = false, updatable = false)
     private MapType mapType;
 
- /**
+    /**
      * Gets the district id.
      * @return the district id
      */
@@ -93,6 +93,10 @@ public class District {
         this.mapType = mapType;
     }
 
+    /**
+     * Returns Official Type that district corresponds to
+     * @return
+     */
     public OfficialType getOfficialType(){
         return this.mapType.getOfficialType();
     }

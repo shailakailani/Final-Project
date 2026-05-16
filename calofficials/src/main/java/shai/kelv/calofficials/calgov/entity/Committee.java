@@ -1,7 +1,7 @@
 /**
- * 
+ * Description: Committee class to be turned into a table
  * @author Shaila Lewis
- * @since 05.06.2026
+ * @since 05.09.2026
  */
 package shai.kelv.calofficials.calgov.entity;
 
@@ -25,6 +25,10 @@ public class Committee {
     @Column(name="official_type", nullable = false)
     private OfficialType officialType;
 
+    /**
+     * 
+     * @return
+     */
     public String getName(){
         return this.name;
     }

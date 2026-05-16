@@ -1,7 +1,7 @@
 /**
  * Description: Configuration for comments.db
  * @author Shaila Lewis
- * @since 04.12.26
+ * @since 05.15.26
  */
 
 package shai.kelv.calofficials.config;
@@ -23,6 +23,12 @@ import jakarta.persistence.EntityManagerFactory;
     transactionManagerRef = "commentsTransactionManager"
 )
 public class CommentsJPAConfig {
+    /**
+     * Defining entity manager factory that manages jpa structure and maps java classes to the tables in database
+     * @param builder builder to map java to the database
+     * @param dataSource factory for connections to database
+     * @return bean 
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean commentsEntityManagerFactory(
             EntityManagerFactoryBuilder builder,
@@ -35,6 +41,11 @@ public class CommentsJPAConfig {
                 .build();
     }
 
+    /**
+     * Defined transaction manager for comments.db
+     * @param emf entity manager for comments 
+     * @return Platform Transaction Manager
+     */
     @Bean
     public PlatformTransactionManager commentsTransactionManager(
             @Qualifier("commentsEntityManagerFactory") EntityManagerFactory emf) {

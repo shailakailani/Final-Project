@@ -1,3 +1,4 @@
+#DESC: file to initially populate db 
 import pandas as pd;
 import sqlite3 as sql3;
 

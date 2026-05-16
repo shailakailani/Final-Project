@@ -1,8 +1,9 @@
 /**
- * Description:
+ * Description: Manages requests for index.html
  * @author Shaila Lewis
- * @since 04.10.26
-*/
+ * @since 05.09.36
+ */
+
 package api.controller;
 
 import org.springframework.stereotype.Controller;

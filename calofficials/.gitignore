@@ -34,13 +34,12 @@ build/
 
 ### Java ###
 *.class
+*.html
+*.css
 
 ### Local database/testing files ###
 comments.db
-<<<<<<< HEAD
 calgov.db
-=======
->>>>>>> 13f5924be869fe8fd7c714d644a861f77c9f5451
 
 ### OS files ###
 .DS_Store
