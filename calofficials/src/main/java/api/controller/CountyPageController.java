@@ -1,5 +1,5 @@
 /**
- * Description: 
+ * Description: File to handle requests from website for the county page
  * @author Shaila Lewis, Kelvin Myat
  * @since 05.15.26
  */
@@ -17,6 +17,10 @@ import java.util.ArrayList;
 public class CountyPageController {
     private final SearchService searchService;
 
+    /**
+     * Constructor for county page controller
+     * @param searchService the service to handle the officer and district querying logic
+     */
     public CountyPageController (SearchService searchService){
         this.searchService = searchService;
     }

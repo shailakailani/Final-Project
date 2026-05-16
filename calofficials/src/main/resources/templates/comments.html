@@ -23,6 +23,8 @@
                  th:each="comment : ${comments}" class="commentCard">
                 <h3 th:text="'@' + ${comment.username}"></h3>
                 <p th:text="${comment.message}"></p>
+                <p th:text="${#temporals.format(comment.date,'MMMM dd, yyyy - hh:mm a')}" th:style="
+    |text-align: right; color: sienna;|"></p>
             </div>
             <div th:if="${comments == null or comments.isEmpty()}" class="commentCard">
                 <h3>@anonymous</h3>
