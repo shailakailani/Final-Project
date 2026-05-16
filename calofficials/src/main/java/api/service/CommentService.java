@@ -5,13 +5,12 @@
  * @since 05.15.26
  */
 package api.service;
-
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import shai.kelv.calofficials.comments.entity.Comment;
 import shai.kelv.calofficials.comments.repo.CommentRepository;
+import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 public class CommentService {
@@ -59,7 +58,8 @@ public class CommentService {
      * @param parentId the id of the parent comment or null if it is a main comment
      * @return the saved comment
      */
-    public Comment saveComment(String username, String message, Long parentId) {
+    @Transactional(transactionManager= "commentsTransactionManager")
+    public Comment saveComment(String username, String message, Long parentId){
         Comment comment = new Comment(parentId, username, message);
         return commentRepository.save(comment);
     }
