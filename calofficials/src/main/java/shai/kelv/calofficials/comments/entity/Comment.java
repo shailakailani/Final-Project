@@ -1,6 +1,8 @@
 /**
- * @author Shaila Lewis
- * @since 04.30.26
+ * Represents a comment posted by a user on the comments page.
+ * A comment can be a main comment or a reply if it has a parent comment id.
+ * @author Kelvin Myat
+ * @since 05.15.26
  */
 package shai.kelv.calofficials.comments.entity;
 
@@ -14,28 +16,38 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="COMMENT")
+@Table(name = "comments")
 public class Comment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="parent_id", nullable=true, unique=false)
+    @Column(name = "parent_id", nullable = true, unique = false)
     private Long parentId;
 
-    @Column(name="username", nullable=true, unique=false)
+    @Column(name = "username", nullable = true, unique = false)
     private String username;
 
-    @Column(name="message", nullable=false)
+    @Column(name = "message", nullable = false)
     private String message;
 
-    @Column(name="date")
+    @Column(name = "date")
     private LocalDateTime date;
 
+    /**
+     * Default constructor required by JPA.
+     */
     protected Comment() {
     }
 
-    public Comment(Long parentId, String username, String message){
+    /**
+     * Creates a new comment with a parent id, username and message.
+     * @param parentId the id of the parent comment, or null if it is a main comment
+     * @param username the username of the person posting the comment
+     * @param message the comment message
+     */
+    public Comment(Long parentId, String username, String message) {
         this.parentId = parentId;
         this.username = username;
         this.message = message;
@@ -44,7 +56,7 @@ public class Comment {
 
     /**
      * Gets the comment id.
-     * @return the id
+     * @return the comment id
      */
     public Long getId() {
         return id;
@@ -52,7 +64,7 @@ public class Comment {
 
     /**
      * Sets the comment id.
-     * @param id the new id
+     * @param id the new comment id
      */
     public void setId(Long id) {
         this.id = id;
@@ -60,7 +72,7 @@ public class Comment {
 
     /**
      * Gets the parent comment id.
-     * @return the parent id
+     * @return the parent comment id
      */
     public Long getParentId() {
         return parentId;
@@ -68,7 +80,7 @@ public class Comment {
 
     /**
      * Sets the parent comment id.
-     * @param parentId the new parent id
+     * @param parentId the new parent comment id
      */
     public void setParentId(Long parentId) {
         this.parentId = parentId;
@@ -91,32 +103,32 @@ public class Comment {
     }
 
     /**
-     * Gets the message.
-     * @return the message
+     * Gets the comment message.
+     * @return the comment message
      */
     public String getMessage() {
         return message;
     }
 
     /**
-     * Sets the message.
-     * @param message the new message
+     * Sets the comment message.
+     * @param message the new comment message
      */
     public void setMessage(String message) {
         this.message = message;
     }
 
     /**
-     * Gets the date.
-     * @return the date
+     * Gets the date and time the comment was created.
+     * @return the comment date and time
      */
     public LocalDateTime getDate() {
         return date;
     }
 
     /**
-     * Sets the date.
-     * @param date the new date
+     * Sets the date and time of the comment.
+     * @param date the new comment date and time
      */
     public void setDate(LocalDateTime date) {
         this.date = date;
