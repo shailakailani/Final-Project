@@ -11,14 +11,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.util.List;
 
-
 public interface OfficialRepository extends JpaRepository<Official, Long> {
-
-    @Query("SELECT DISTINCT official FROM Official official LEFT JOIN FETCH official.committeeIds WHERE official.districtId = :districtId")
+     @Query("SELECT DISTINCT official FROM Official official LEFT JOIN FETCH official.committeeIds WHERE official.districtId = :districtId") 
     List<Official> findAllByDistrictId(@Param("districtId") Long districtId);
 
     List<Official> findByNameContainingIgnoreCase(String name);
 
     @Query("SELECT DISTINCT official FROM Official official LEFT JOIN FETCH official.committeeIds WHERE official.districtId = :districtId AND official.officialType = :officialType") 
     List<Official> findAllByDistrictIdAndOfficialType(@Param("districtId") Object districtId, @Param("officialType") Object officialType);
+
 }
