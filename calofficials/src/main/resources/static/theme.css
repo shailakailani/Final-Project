@@ -93,7 +93,7 @@ body {
     display: flex;
     align-content: center;
     text-decoration: none;
-    color: var(--title-border-color, #19747E);
+    color: var(--title-text-color, #19747E);
     height:100%;
     width: 100%;
     border: 1px solid var(--title-border-color, #19747E);
