@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
     <div th:fragment="menu(menuColor, textColor, highlightColor, borderColor)" class="menu" th:style="|--menu-color: ${menuColor};--title-border-color:${borderColor};|">
-        <nav th:style="|--title-border-color:${borderColor}; --title-text-color: ${textColor};--title-highlight-color:${highlightColor}; |">
+        <nav th:style="|--title-border-color:${borderColor}; --title-text-color: ${textColor};--title-text-highlight:${highlightColor}; |">
             <a th:href="@{/}">Home</a>
             <a th:href="@{/search}">Search</a>
             <a th:href="@{/county}">County</a>
