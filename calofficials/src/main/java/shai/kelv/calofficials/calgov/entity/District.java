@@ -44,7 +44,7 @@ public class District {
     @Enumerated(EnumType.STRING)
     @Column(name="map_type", nullable = false, insertable = false, updatable = false)
     private MapType mapType;
-    
+
  /**
      * Gets the district id.
      * @return the district id
@@ -91,5 +91,9 @@ public class District {
      */
     public void setMapType(MapType mapType) {
         this.mapType = mapType;
+    }
+
+    public OfficialType getOfficialType(){
+        return this.mapType.getOfficialType();
     }
 }
