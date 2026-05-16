@@ -17,7 +17,7 @@
 .input{
     --input-border: rgb(84, 105, 225);
     --input-background: rgb(240, 253, 255);
-    --input-text-color:#9EB5FF;
+    --input-text-color:#667299;
     width: 200px;
     height: 25px;
     border-radius: 10%;
@@ -29,7 +29,4 @@
 }
 h1,h2{
     color:#798cc9;
-}
-html{
-    background-color:#f1f5ff;
 }

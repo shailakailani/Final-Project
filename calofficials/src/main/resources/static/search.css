@@ -42,8 +42,3 @@ h3{
 .input:focus-visible{
     outline: auto;
 }
-
-html {
-    background-color: #fffdef;
-    font-family: "Suse Mono" ;
-}
