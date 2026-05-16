@@ -1,7 +1,7 @@
 /**
  * Service class for handling comment logic.
  * This class connects the comments controller to the comment repository.
- * @author Kelvin Myat
+ * @author Shaila Lewis, Kelvin Myat
  * @since 05.15.26
  */
 package api.service;

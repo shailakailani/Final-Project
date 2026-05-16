@@ -1,7 +1,7 @@
 /**
  * Repository for accessing Comment data from the database.
  * This interface provides methods to find comments and replies.
- * @author Kelvin Myat
+ * @author Shaila Lewis, Kelvin Myat
  * @since 05.15.26
  */
 package shai.kelv.calofficials.comments.repo;

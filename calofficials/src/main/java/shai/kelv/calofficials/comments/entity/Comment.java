@@ -1,7 +1,7 @@
 /**
  * Represents a comment posted by a user on the comments page.
  * A comment can be a main comment or a reply if it has a parent comment id.
- * @author Kelvin Myat
+ * @author Shaila Lewis, Kelvin Myat
  * @since 05.15.26
  */
 package shai.kelv.calofficials.comments.entity;

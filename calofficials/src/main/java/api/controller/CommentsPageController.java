@@ -1,6 +1,6 @@
 /**
  * Controller for displaying the comments page and adding new comments.
- * @author Kelvin Myat
+ * @author Shaila Lewis, Kelvin Myat
  * @since 05.15.26
  */
 package api.controller;
