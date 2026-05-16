@@ -19,7 +19,6 @@ target/
 *.iml
 *.ipr
 
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -35,7 +34,10 @@ build/
 
 ### Java ###
 *.class
-*.html
-*.css
-*.csv
-*.db
+
+### Local database/testing files ###
+comments.db
+
+### OS files ###
+.DS_Store
+Thumbs.db
