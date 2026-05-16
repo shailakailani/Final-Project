@@ -32,7 +32,8 @@ h3{
 
 .card{
     width: 50%;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(242, 220, 159);
     padding: 1%;
     border: 2px solid peru;
@@ -41,14 +42,12 @@ h3{
 }
 
 button{
-    --button-text-border-color: #19747E; 
     font-family: "Suse Mono";
     border: 2px solid;
     padding: 1%;
     border-radius: 15%;
+    width: min-content;
     background-color: var(--button-color,#b0dfe4);
-    -webkit-text-stroke: .8px var(--button-text-border-color);
-    -webkit-text-fill-color: var(--button-text-color, #19747E);
     font-size: 1.1em;
     border-color: var(--button-border-color, #19747E);
 }
@@ -64,7 +63,7 @@ button{
 }
 
 html {
-    background-color: #D1E8E2;
+    background-color:var(--bg-color, #D1E8E2);
     font-family: "Suse Mono" ;
 }
 
@@ -72,11 +71,12 @@ body {
     margin:0px;
     padding:0px;
 }
+
 .menu{
-    background: azure;
+    background: var(--menu-color, azure);
     max-width: 100%;
     padding: 0%;
-    border-bottom: 1px solid #19747E;
+    border-bottom: 1px solid var(--title-border-color, #19747E);
 }
 
 .menu nav{
@@ -93,10 +93,10 @@ body {
     display: flex;
     align-content: center;
     text-decoration: none;
-    color: #19747E;
+    color: var(--title-border-color, #19747E);
     height:100%;
     width: 100%;
-    border: 1px solid #19747E;
+    border: 1px solid var(--title-border-color, #19747E);
     margin: 0px !important;
     text-align: center;
     padding: 1%;
@@ -104,7 +104,7 @@ body {
 }
 
 .menu a:hover{
-    color: #19397e;
+    color: var(--title-text-highlight, #19397e);
 }
 
 #container {

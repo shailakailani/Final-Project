@@ -7,9 +7,9 @@
 }
 
 .commentCard{
-    background-color: rgb(219, 201, 245);
+    background-color:cornsilk;
     padding: 2%;
-    border: 2px solid rgb(194, 159, 242);
+    border: 2px solid burlywood;
     border-radius: 4%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -17,13 +17,43 @@
 
 .commentCard p{
     text-align: right;
-    font-family: "Offside";
+    font-family: "Inconsolata";
     hyphens: auto;
 }
 
-.commentCard h2{
+.commentCard h3{
     margin-top: 2%;
-    font-family: "Yomogi";
-    color: mediumslateblue;
+    font-family: "Tenor Sans";
+    color:darkgoldenrod;
     text-transform: lowercase;
 }
+
+h1{
+    color: darkgoldenrod;
+}
+
+button{
+    font-size: .9em;
+    padding: .5%;
+    border-radius: 15%;
+    width: 60px;
+
+}
+
+
+.input{
+    --input-border: goldenrod;
+    --input-background: rgb(255, 255, 255);
+    --input-text-color: goldenrod;
+    width: min-content;
+    height: 25px;
+    padding:3px;
+    border-radius: 10%;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-background);
+    font-family: 'Tenor Sans';
+    color: var(--input-text-color);
+    margin-bottom: 2%;
+}
+
+

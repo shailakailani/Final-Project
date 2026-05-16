@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:style="|--bg-color: ivory|">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" th:href="@{/comments.css}">
         <title>Comments CalOfficials</title>
     </head>
     <body>
-        <div th:replace="~{fragments/menu :: menu}"></div>
+        <div th:replace="~{fragments/menu :: menu('lemonChiffon', 'goldenRod',  'burlywood','goldenRod')}"></div>
         <div id="container" >
         <h1 th:text="${message}"></h1>
         <form action="/comments" method="post" style="margin-bottom: 20px;">
-            <input type="text" name="username" placeholder="Enter username" style="margin-right: 10px;">
-            <input type="text" name="message" placeholder="Enter message" required style="margin-right: 10px; width: 300px;">
-            <button type="submit">Post</button>
+            <input id="username" type="text" name="username" placeholder="Enter username" class="input">
+            <input id="message" type="text" name="message" placeholder="Enter message" required class="input">
+            <button type="submit" th:style="|--button-color: lemonChiffon; --button-border-color: goldenRod;|">Post</button>
         </form>
 
         <div class="card-container">
             <div th:if="${comments != null and !comments.isEmpty()}"
                  th:each="comment : ${comments}" class="commentCard">
-                <h2 th:text="'@' + ${comment.username}"></h2>
+                <h3 th:text="'@' + ${comment.username}"></h3>
                 <p th:text="${comment.message}"></p>
             </div>
 
             <div th:if="${comments == null or comments.isEmpty()}" class="commentCard">
-                <h2>@anonymous</h2>
+                <h3>@anonymous</h3>
                 <p>No comments yet. Be the first to post one.</p>
             </div>
         </div>

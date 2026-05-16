@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:style="|--bg-color: snow|">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" th:href="@{/search.css}">
@@ -7,7 +7,7 @@
         <meta>
     </head>
     <body>
-    <div th:replace="~{fragments/menu :: menu}"></div>
+        <div th:replace="~{fragments/menu :: menu('mistyrose', 'palevioletred',  'lightpink','palevioletred')}"></div>
         
     <div id="container" >
     <h1 th:text="${message}"></h1>
